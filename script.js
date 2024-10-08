@@ -1,7 +1,3 @@
-const startButton = document.getElementById("startButton");
-const questionContainer = document.getElementById("questionContainer");
-const questionText = document.getElementById("questionText");
-const answerButtons = document.getElementById("answerButtons");
 const firstContainer = document.getElementById("firstContainer");
 const startButton = document.getElementById("startButton");
 const questionContainer = document.getElementById("questionContainer");
@@ -11,28 +7,10 @@ const recapContainer = document.getElementById("recapContainer");
 const finalScoreText = document.getElementById("finalScore");
 const restartButton = document.getElementById("restartButton");
 const timerSpan = document.getElementById("timer");
-
-let timerTime = 10;
 timerSpan.textContent = "10";
-
-function timer() {
-  timerTime--;
-  timerSpan.textContent = timerTime;
-  if (timerTime === 0) {
-    clearInterval(timerTime);
-  }
-}
-
+let score = 0;
 let timerTime = 10;
-timerSpan.textContent = "10";
-
-function timer() {
-  timerTime--;
-  timerSpan.textContent = timerTime;
-  if (timerTime === 0) {
-    clearInterval(compteur);
-  }
-}
+let time;
 
 const questions = [
   {
@@ -70,7 +48,7 @@ function startQuiz() {
   questionContainer.style.display = "flex";
   recapContainer.style.display = "none"; // Masquer le récapitulatif au début du quiz
   showQuestion();
-  const compteur = setInterval(timer, 1000);
+  startTimer();
 }
 
 function showQuestion() {
@@ -78,6 +56,7 @@ function showQuestion() {
   questionText.textContent = currentQuestion.question;
   const answerButtonsList = answerButtons.querySelectorAll("button");
   answerButtonsList.forEach((button, index) => {
+    // J'ai pas compris
     button.textContent = currentQuestion.answers[index];
   });
 }
@@ -94,9 +73,29 @@ function selectAnswer(answerIndex) {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     showQuestion();
+    resetTimer();
   } else {
     endQuiz();
   }
+}
+
+function startTimer() {
+  time = setInterval(timer, 1000);
+}
+
+function timer() {
+  timerTime--;
+  timerSpan.textContent = timerTime;
+  if (timerTime === 0) {
+    clearInterval(time);
+  }
+}
+
+function resetTimer() {
+  clearInterval(time);
+  timerTime = 10;
+  timerSpan.textContent = timerTime;
+  startTimer();
 }
 
 // Afficher le récapitulatif du quiz
