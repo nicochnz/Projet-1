@@ -1,3 +1,7 @@
+const startButton = document.getElementById("startButton");
+const questionContainer = document.getElementById("questionContainer");
+const questionText = document.getElementById("questionText");
+const answerButtons = document.getElementById("answerButtons");
 const playBtn = document.getElementById("startButton");
 const firstContainer = document.getElementById("firstContainer");
 
@@ -14,11 +18,6 @@ function updateScore() {
   const scoreDisplay = document.getElementById("score");
   scoreDisplay.textContent = score;
 }
-
-const startButton = document.getElementById("startButton");
-const questionContainer = document.getElementById("questionContainer");
-const questionText = document.getElementById("questionText");
-const answerButtons = document.getElementById("answerButtons");
 
 const questions = [
   {
