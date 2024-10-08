@@ -1,3 +1,20 @@
+const playBtn = document.getElementById("startButton");
+const firstContainer = document.getElementById("firstContainer");
+
+// Permet de changer de l'interface d'accueil au question
+playBtn?.addEventListener("click", () => {
+  firstContainer.style.opacity = "0";
+  firstContainer.style.transform = "translateX(-200%)";
+  questionContainer.style.display = "block";
+});
+
+let score = 0;
+// permet de recuperer et d'afficher le score
+function updateScore() {
+  const scoreDisplay = document.getElementById("score");
+  scoreDisplay.textContent = score;
+}
+
 const startButton = document.getElementById("startButton");
 const questionContainer = document.getElementById("questionContainer");
 const questionText = document.getElementById("questionText");
@@ -38,6 +55,8 @@ function showQuestion() {
 function selectAnswer(answerIndex) {
   const correctAnswer = questions[currentQuestionIndex].correct;
   if (answerIndex === correctAnswer) {
+    score++;
+    updateScore();
     alert("Bonne réponse !");
   } else {
     alert("Mauvaise réponse.");
