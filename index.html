@@ -3,31 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Wildy-Quizz</title>
   </head>
   <body>
-    <section id="firstContainer">
-      <img src="./img/LogoBordeauxQuizz.png" alt="Logo" />
-      <h1>Bordeaux-Quizz</h1>
-      <button id="play">JOUER</button>
-      <button id="difficult">DIFFICULTY</button>
-    </section>
-    <main>
-      <header>
-        <span id="questionNbr">Q1</span>
-        <p>Score: <span id="score">0</span> /15</p>
-        <img src="../img/LogoBordeauxQuizz.png" alt="Logo" />
-      </header>
-      <section id="questionContainer">
-        <span id="question">La place des ... ?</span>
-        <article><button id="answer1">Quiconces</button></article>
-        <article><button id="answer2">Gambettas</button></article>
-        <article><button id="answer3">Saintes-Catherine</button></article>
-        <article><button id="answer4">Victoires</button></article>
-        <article><span>Timer</span></article>
+    <h1>Quiz Bordeaux</h1>
+    <section>
+      <button id="startButton">Jouer</button>
+      <button id="startButton">Difficulté</button>
+        </select>
       </section>
-    </main>
+      <section class="question-container" id="questionContainer">
+        <p class="question" id="questionText"></p>
+        <section class="answer-buttons" id="answerButtons">
+          <button class="answer-button" onclick="selectAnswer(0)">
+            Réponse 1
+          </button>
+          <button class="answer-button" onclick="selectAnswer(1)">
+            Réponse 2
+          </button>
+          <button class="answer-button" onclick="selectAnswer(2)">
+            Réponse 3
+          </button>
+          <button class="answer-button" onclick="selectAnswer(3)">
+            Réponse 4
+          </button>
+        </section>
+      </section>
+    </section>
+    <audio controls autoplay loop>
+      <source src="./music/chameleon_nmKBEETZ.mp3" type="audio/mp3">
+      Votre navigateur ne supporte pas l'élément audio.
+  </audio>
+
     <script src="script.js"></script>
   </body>
 </html>
