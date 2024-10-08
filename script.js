@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-const playBtn = document.getElementById("play");
+const playBtn = document.getElementById("startButton");
 const firstContainer = document.getElementById("firstContainer");
 const main = document.querySelector("main");
 
@@ -65,7 +64,6 @@ function answerValidation() {
 }
 
 answerValidation();
-=======
 const startButton = document.getElementById("startButton");
 const questionContainer = document.getElementById("questionContainer");
 const questionText = document.getElementById("questionText");
@@ -124,4 +122,3 @@ function resetQuiz() {
   startButton.style.display = "block";
   questionContainer.style.display = "none";
 }
->>>>>>> c5e6cdbcab5c927a7254fe48a1e9c14028338469

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-body {
+/* body {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -84,19 +83,18 @@ article:nth-child(5) {
 article:nth-child(6) {
   grid-column-start: 2;
   grid-row-start: 3;
-}
+} */
 
-@media screen and (max-width: 362px) {
+/* @media screen and (max-width: 362px) {
   main {
     transform: translateY(-150%);
     display: none;
   }
-=======
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 body {
   font-family: Arial, sans-serif;
@@ -157,5 +155,4 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
->>>>>>> c5e6cdbcab5c927a7254fe48a1e9c14028338469
 }
