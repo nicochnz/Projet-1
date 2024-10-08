@@ -11,31 +11,32 @@
       <h1>Quiz Bordeaux</h1>
       <button id="startButton">Jouer</button>
       <button id="difficulty">Difficulté</button>
-        </select>
-      </section>
-      <section id="questionContainer">
-        <p class="question" id="questionText"></p>
-        <p>Score: <span id="score">0</span></p>
-        <section class="answer-buttons" id="answerButtons">
-          <button class="answer-button" onclick="selectAnswer(0)">
-            Réponse 1
-          </button>
-          <button class="answer-button" onclick="selectAnswer(1)">
-            Réponse 2
-          </button>
-          <button class="answer-button" onclick="selectAnswer(2)">
-            Réponse 3
-          </button>
-          <button class="answer-button" onclick="selectAnswer(3)">
-            Réponse 4
-          </button>
-        </section>
+    </section>
+
+    <section id="questionContainer" style="display: none">
+      <p class="question" id="questionText"></p>
+      <p>Score: <span id="score">0</span></p>
+      <section class="answer-buttons" id="answerButtons">
+        <button class="answer-button" onclick="selectAnswer(0)">
+          Réponse 1
+        </button>
+        <button class="answer-button" onclick="selectAnswer(1)">
+          Réponse 2
+        </button>
+        <button class="answer-button" onclick="selectAnswer(2)">
+          Réponse 3
+        </button>
+        <button class="answer-button" onclick="selectAnswer(3)">
+          Réponse 4
+        </button>
       </section>
     </section>
-    <!-- <audio controls autoplay loop>
-      <source src="./music/chameleon_nmKBEETZ.mp3" type="audio/mp3">
-      Votre navigateur ne supporte pas l'élément audio.
-  </audio> -->
+
+    <section id="recapContainer" style="display: none">
+      <h2>Félicitations !</h2>
+      <p>Votre score final est : <span id="finalScore">0</span></p>
+      <button id="restartButton">Retour à l'accueil</button>
+    </section>
 
     <script src="script.js"></script>
   </body>
