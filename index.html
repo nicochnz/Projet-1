@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Quiz Bordeaux</h1>
-    <section>
+    <section id="firstContainer">
+      <h1>Quiz Bordeaux</h1>
       <button id="startButton">Jouer</button>
       <button id="difficulty">Difficulté</button>
         </select>
       </section>
-      <section class="question-container" id="questionContainer">
+      <section id="questionContainer">
         <p class="question" id="questionText"></p>
+        <p>Score: <span id="score">0</span></p>
         <section class="answer-buttons" id="answerButtons">
           <button class="answer-button" onclick="selectAnswer(0)">
             Réponse 1
@@ -31,10 +32,10 @@
         </section>
       </section>
     </section>
-    <audio controls autoplay loop>
+    <!-- <audio controls autoplay loop>
       <source src="./music/chameleon_nmKBEETZ.mp3" type="audio/mp3">
       Votre navigateur ne supporte pas l'élément audio.
-  </audio>
+  </audio> -->
 
     <script src="script.js"></script>
   </body>
