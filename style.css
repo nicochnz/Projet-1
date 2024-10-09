@@ -52,15 +52,46 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
+  transform: translateY(-30%);
+
+  max-height: 400px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  text-align: center;
 }
 
 .question {
   font-size: 1.5em;
   margin-bottom: 20px;
+  height: auto;
+  width: auto;
 }
-
-.answer-buttons {
+#firstContainer {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+}
+.answer-button {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  background-color: #6c0433;
+  border-radius: 5px;
+}
+
+#recapContainer {
+  display: flex;
+  color: #6c0433;
+  font-size: 30px;
+  font-weight: bold;
+  border: 5px solid red;
+}
+#restartButton {
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-align: center;
 }

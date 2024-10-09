@@ -14,6 +14,16 @@ const questions = [
     answers: ["3", "4", "5", "6"],
     correct: 1,
   },
+  {
+    question: "Quel âge a la ville de Bordeaux ?",
+    answers: [
+      "une première cité y est née au IIIe siècle av. J. -C.",
+      "une première cité y est née au VIIe siècle av. J. -C.",
+      "une première cité y est née au II siècle ap. J. -C.",
+      "En l'an 0 au même moment que la création de la chocolatine",
+    ],
+    correct: 0,
+  },
 ];
 
 let currentQuestionIndex = 0;
