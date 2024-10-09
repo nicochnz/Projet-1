@@ -24,6 +24,7 @@ function startQuiz() {
   startButton.style.display = "none";
   questionContainer.style.display = "flex";
   showQuestion();
+  startTimer();
 }
 
 function showQuestion() {
@@ -31,6 +32,7 @@ function showQuestion() {
   questionText.textContent = currentQuestion.question;
   const answerButtonsList = answerButtons.querySelectorAll("button");
   answerButtonsList.forEach((button, index) => {
+    // J'ai pas compris
     button.textContent = currentQuestion.answers[index];
   });
 }
@@ -45,11 +47,13 @@ function selectAnswer(answerIndex) {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     showQuestion();
+    resetTimer();
   } else {
     alert("Quiz terminé !");
     resetQuiz();
   }
 }
+
 
 function resetQuiz() {
   currentQuestionIndex = 0;
