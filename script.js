@@ -8,6 +8,7 @@ const finalScoreText = document.getElementById("finalScore");
 const restartButton = document.getElementById("restartButton");
 const scoreDisplay = document.getElementById("score");
 const timerSpan = document.getElementById("timer");
+const allButton = document.querySelectorAll("button");
 
 const questions = [
   {
@@ -64,22 +65,49 @@ function showFeedback(message, type) {
 }
 function selectAnswer(answerIndex) {
   const correctAnswer = questions[currentQuestionIndex].correct;
+  const selectedAnswerElement = document.querySelector(
+    `[data-index="${answerIndex}"]`
+  );
+  const correctAnswerElement = document.querySelector(
+    `[data-index="${correctAnswer}"]`
+  );
+
   if (answerIndex === correctAnswer) {
     score++;
     scoreDisplay.textContent = score;
     showFeedback("Bonne réponse !", "success");
+    selectedAnswerElement.style.backgroundColor = "green";
   } else {
     showFeedback("Mauvaise réponse.", "error");
+    selectedAnswerElement.style.backgroundColor = "red";
+    correctAnswerElement.style.backgroundColor = "green";
   }
+
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     setTimeout(() => {
+      resetAnswerColors();
       showQuestion();
       resetTimer();
     }, 1000); // Petite pause pour donner du temps à voir le résultat
   } else {
     setTimeout(endQuiz, 1000);
   }
+}
+
+function resetAnswerColors() {
+  const answerElements = document.querySelectorAll(".answer-button");
+  answerElements.forEach((answerIndex) => {
+    answerIndex.style.backgroundColor = "#6c0433"; // Réinitialise à la couleur par défaut
+  });
+}
+function showFeedback(message, type) {
+  // Simple feedback à l'utilisateur sans alerte intrusive
+  const feedback = document.createElement("section");
+  feedback.textContent = message;
+  feedback.className = type === "success" ? "success" : "error";
+  document.body.appendChild(feedback);
+  setTimeout(() => feedback.remove(), 1000);
 }
 
 function endQuiz() {
