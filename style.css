@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -5,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("image/philippe-oursel-3RJJgtMWm8s-unsplash.jpg");
+  background-image: url("image/place-bourse-bordeaux.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,15 +45,13 @@ button:hover {
   background-color: #07376a;
 }
 
-#questionContainer {
+.question-container {
   display: none;
   flex-direction: column;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
-  display: none;
-  transform: translateY(-30%);
 }
 
 .question {
