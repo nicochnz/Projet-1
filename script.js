@@ -1,7 +1,13 @@
+const firstContainer = document.getElementById("firstContainer");
 const startButton = document.getElementById("startButton");
 const questionContainer = document.getElementById("questionContainer");
 const questionText = document.getElementById("questionText");
 const answerButtons = document.getElementById("answerButtons");
+const recapContainer = document.getElementById("recapContainer");
+const finalScoreText = document.getElementById("finalScore");
+const restartButton = document.getElementById("restartButton");
+const scoreDisplay = document.getElementById("score");
+const timerSpan = document.getElementById("timer");
 
 const questions = [
   {
@@ -27,12 +33,13 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-
-startButton.addEventListener("click", startQuiz);
+let score = 0;
+let timerTime = 10;
+let timerInterval;
 
 function startQuiz() {
-  startButton.style.display = "none";
-  questionContainer.style.display = "flex";
+  firstContainer.style.display = "none"; // Masquer l'élément de démarrage
+  questionContainer.style.display = "flex"; // Afficher les questions
   showQuestion();
   startTimer();
 }
@@ -40,33 +47,79 @@ function startQuiz() {
 function showQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
   questionText.textContent = currentQuestion.question;
-  const answerButtonsList = answerButtons.querySelectorAll("button");
-  answerButtonsList.forEach((button, index) => {
-    // J'ai pas compris
+  const buttons = answerButtons.querySelectorAll("button");
+  buttons.forEach((button, index) => {
     button.textContent = currentQuestion.answers[index];
+    button.onclick = () => selectAnswer(index);
   });
 }
 
 function selectAnswer(answerIndex) {
   const correctAnswer = questions[currentQuestionIndex].correct;
   if (answerIndex === correctAnswer) {
-    alert("Bonne réponse !");
+    score++;
+    scoreDisplay.textContent = score;
+    showFeedback("Bonne réponse !", "success");
   } else {
-    alert("Mauvaise réponse.");
+    showFeedback("Mauvaise réponse.", "error");
   }
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
-    showQuestion();
-    resetTimer();
+    setTimeout(() => {
+      showQuestion();
+      resetTimer();
+    }, 1000); // Petite pause pour donner du temps à voir le résultat
   } else {
-    alert("Quiz terminé !");
-    resetQuiz();
+    setTimeout(endQuiz, 1000);
   }
 }
 
+function showFeedback(message, type) {
+  // Simple feedback à l'utilisateur sans alerte intrusive
+  const feedback = document.createElement("section");
+  feedback.textContent = message;
+  feedback.className = type === "success" ? "success" : "error";
+  document.body.appendChild(feedback);
+  setTimeout(() => feedback.remove(), 1000);
+}
+
+function endQuiz() {
+  questionContainer.style.display = "none";
+  recapContainer.style.display = "block";
+  finalScoreText.textContent = score;
+  clearInterval(timerInterval);
+}
 
 function resetQuiz() {
   currentQuestionIndex = 0;
-  startButton.style.display = "block";
+  score = 0;
+  scoreDisplay.textContent = score;
+  recapContainer.style.display = "none";
+  firstContainer.style.display = "block"; // Réafficher l'écran de démarrage
   questionContainer.style.display = "none";
 }
+
+function startTimer() {
+  timerTime = 10;
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timerTime--;
+    updateTimerDisplay();
+    if (timerTime === 0) {
+      clearInterval(timerInterval);
+      selectAnswer(-1); // Ne pas afficher de feedback
+    }
+  }, 1000);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  startTimer();
+}
+
+function updateTimerDisplay() {
+  timerSpan.textContent = timerTime;
+}
+
+startButton.addEventListener("click", startQuiz);
+restartButton.addEventListener("click", resetQuiz);
