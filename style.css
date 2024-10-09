@@ -45,9 +45,7 @@ button:hover {
   background-color: #07376a;
 }
 
-.question-container {
   display: none;
-  flex-direction: column;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
