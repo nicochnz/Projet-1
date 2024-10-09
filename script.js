@@ -54,6 +54,14 @@ function showQuestion() {
   });
 }
 
+function showFeedback(message, type) {
+  // Simple feedback à l'utilisateur sans alerte intrusive
+  const feedback = document.createElement("section");
+  feedback.textContent = message;
+  feedback.className = type === "success" ? "success" : "error";
+  document.body.appendChild(feedback);
+  setTimeout(() => feedback.remove(), 1000);
+}
 function selectAnswer(answerIndex) {
   const correctAnswer = questions[currentQuestionIndex].correct;
   if (answerIndex === correctAnswer) {
@@ -72,15 +80,6 @@ function selectAnswer(answerIndex) {
   } else {
     setTimeout(endQuiz, 1000);
   }
-}
-
-function showFeedback(message, type) {
-  // Simple feedback à l'utilisateur sans alerte intrusive
-  const feedback = document.createElement("section");
-  feedback.textContent = message;
-  feedback.className = type === "success" ? "success" : "error";
-  document.body.appendChild(feedback);
-  setTimeout(() => feedback.remove(), 1000);
 }
 
 function endQuiz() {
