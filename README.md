@@ -10,6 +10,7 @@ CSS :
 
 Trouver une belle police d'écriture lisible Faire le site en responsive Mettre des couleurs accessible Design du timer
 Ajout d'image pour chaque question
+Custom le timer
 
 JAVASCRIPT :
 
