@@ -135,7 +135,7 @@ const questions = [
 let currentQuestionIndex = 0;
 let score = 0;
 let timerInterval;
-let timerTime;
+let timerTime = 20;
 
 function startQuiz() {
   if (input.value === "") {
@@ -188,7 +188,7 @@ function selectAnswer(answerIndex) {
       resetAnswerColors();
       showQuestion();
       resetTimer();
-    }, 3000);
+    }, 2000);
   } else {
     setTimeout(endQuiz, 1000);
   }
@@ -236,20 +236,20 @@ function resetQuiz() {
 }
 
 function startTimer() {
-  let timerTime = 20;
   updateTimerDisplay();
   timerInterval = setInterval(() => {
     timerTime--;
     updateTimerDisplay();
     if (timerTime === 0) {
       clearInterval(timerInterval);
-      selectAnswer(-1); // Si temps écoulé, aucune réponse sélectionnée
+      selectAnswer(-1);
     }
   }, 1000);
 }
 
 function resetTimer() {
   clearInterval(timerInterval);
+  timerTime = 20;
   startTimer();
 }
 
