@@ -9,6 +9,19 @@ const restartButton = document.getElementById("restartButton");
 const scoreDisplay = document.getElementById("score");
 const timerSpan = document.getElementById("timer");
 const allButton = document.querySelectorAll("button");
+const h2RecapContainer = document.createElement("h2");
+const input = document.createElement("input");
+input.type = "text";
+input.placeholder = "Entrez votre surnom...";
+input.className = "inputName";
+input.required = "required";
+firstContainer.appendChild(input);
+recapContainer.appendChild(h2RecapContainer);
+
+input.addEventListener("input", function () {
+  const userName = this.value;
+  h2RecapContainer.textContent = `Félicitation ${userName} !`;
+});
 
 const questions = [
   {
@@ -35,7 +48,6 @@ const questions = [
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timerTime = 10;
 let timerInterval;
 
 function startQuiz() {
@@ -103,6 +115,7 @@ function showFeedback(message, type) {
 }
 
 function endQuiz() {
+  resetAnswerColors();
   questionContainer.style.display = "none";
   recapContainer.style.display = "block";
   finalScoreText.textContent = score;
@@ -119,7 +132,7 @@ function resetQuiz() {
 }
 
 function startTimer() {
-  timerTime = 10;
+  timerTime = 20;
   updateTimerDisplay();
   timerInterval = setInterval(() => {
     timerTime--;
