@@ -12,6 +12,8 @@ const allButton = document.querySelectorAll("button");
 const descriptionQuestion = document.getElementById("description");
 const h2RecapContainer = document.createElement("h2");
 const input = document.createElement("input");
+const numberQuestion = document.getElementById("numberQuestion");
+
 input.type = "text";
 input.placeholder = "Entrez votre surnom...";
 input.className = "inputName";
@@ -186,7 +188,7 @@ function selectAnswer(answerIndex) {
       resetAnswerColors();
       showQuestion();
       resetTimer();
-    }, 10000);
+    }, 3000);
   } else {
     setTimeout(endQuiz, 1000);
   }
@@ -254,6 +256,9 @@ function resetTimer() {
 function updateTimerDisplay() {
   timerSpan.textContent = timerTime;
 }
+
+let totalQuestion = 12;
+let currentNumber = 0;
 
 startButton.addEventListener("click", startQuiz);
 restartButton.addEventListener("click", resetQuiz);
