@@ -9,38 +9,117 @@ const restartButton = document.getElementById("restartButton");
 const scoreDisplay = document.getElementById("score");
 const timerSpan = document.getElementById("timer");
 const allButton = document.querySelectorAll("button");
+const descriptionQuestion = document.getElementById("description");
 
 const questions = [
   {
     question: "Quelle est la capitale de la France ?",
-    answers: ["Paris", "Londres", "Madrid", "Berlin"],
+    answers: ["Paris", "Bordeaux", "Lyon", "Marseille"],
+    description: "blabla",
     correct: 0,
   },
   {
-    question: "Combien font 2 + 2 ?",
-    answers: ["3", "4", "5", "6"],
+    question: "Que représentent les mascarons ?",
+    answers: [
+      " Ornement d’inspiration multiple se trouvant principalement en haut des façades",
+      "C'est un petit gâteau",
+      "Un masque porté lors des festivals bordelais",
+      "Un accessoire de mode du XVIIe siècle",
+    ],
+    description: "blabla",
+    correct: 0,
+  },
+  {
+    question:
+      "Qu’était le stade Chaban-Delmas avant d’être dédié au foot et au rugby ?",
+    answers: [
+      "Un pré où broutaient des chèvres",
+      "Un vélodrome",
+      "Un amphithéâtre romain",
+      " Un parking pour carrosses",
+    ],
+    description: "blabla",
     correct: 1,
   },
   {
-    question: "Quel âge a la ville de Bordeaux ?",
+    question: "Quand est apparu le premier tramway à Bordeaux ?",
+    answers: ["1932", "2003", "2000", "1880"],
+    description: "blabla",
+    correct: 3,
+  },
+  {
+    question: "Qu’est donc le Palais Rohan ?",
     answers: [
-      "une première cité y est née au IIIe siècle av. J. -C.",
-      "une première cité y est née au VIIe siècle av. J. -C.",
-      "une première cité y est née au II siècle ap. J. -C.",
-      "En l'an 0 au même moment que la création de la chocolatine",
+      "Un château dans Le Seigneur des Anneaux",
+      "L’actuelle mairie de Bordeaux.",
+      "Les bâtiments composant la Place de la Bourse.",
+      "Une échoppe célèbre pour ses huîtres.",
     ],
+    description: "blabla",
+    correct: 1,
+  },
+  {
+    question: "Qu’est donc le bordeluche ?",
+    answers: [
+      "Un sac à vin bordelais.",
+      "Une danse traditionnelle bordelaise",
+      "Le vieux parlé bordelais. ",
+      "Une sorte de fromage.",
+    ],
+    description: "blabla",
+    correct: 2,
+  },
+  {
+    question: "D'où vient le nom de Bordeaux ?",
+    answers: [
+      "De l’ancien nom latin Burdigala",
+      "D’une légende sur les eaux du port",
+      "Des bordures du fleuve",
+      "D’une famille noble locale.",
+    ],
+    description: "blabla",
+    correct: 0,
+  },
+  {
+    question: "Combien de ponts y a-t-il sur l’agglomération bordelaise ?",
+    answers: ["3", "4", "5", "6"],
+    description: "blabla",
+    correct: 2,
+  },
+  {
+    question: "De quelle couleur est la Garonne sur son tronçon bordelais ?",
+    answers: ["Marron", "Beige", "Blonde", "Juste gavé sale"],
+    description: "blabla",
+    correct: 2,
+  },
+  {
+    question: "En quelle année l’Union Bordeaux Bègles a-t-elle été créée ?",
+    answers: ["1969", "1991", "2007", "2006"],
+    description: "blabla",
+    correct: 3,
+  },
+  {
+    question: "Quand a été créé le cannelé bordelais ?",
+    answers: ["XVI siècle", "XVIIIe siècle", "En 2012", "IIIe siècle"],
+    description: "blabla",
+    correct: 1,
+  },
+  {
+    question: "Quelle est le nom de la vague bordelaise ?",
+    answers: ["Le mascaret", "Le mascara", "La mascarade", "Le masque à Ray"],
+    description: "blabla",
     correct: 0,
   },
 ];
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timerTime = 10;
+let timerTime = 20;
 let timerInterval;
 
 function startQuiz() {
-  firstContainer.style.display = "none"; // Masquer l'élément de démarrage
-  questionContainer.style.display = "flex"; // Afficher les questions
+  firstContainer.style.display = "none";
+  questionContainer.style.display = "flex";
   showQuestion();
   startTimer();
 }
@@ -51,6 +130,7 @@ function showQuestion() {
   const buttons = answerButtons.querySelectorAll("button");
   buttons.forEach((button, index) => {
     button.textContent = currentQuestion.answers[index];
+    button.dataset.index = index;
     button.onclick = () => selectAnswer(index);
   });
 }
@@ -75,31 +155,39 @@ function selectAnswer(answerIndex) {
     correctAnswerElement.style.backgroundColor = "green";
   }
 
+  showDescription(questions[currentQuestionIndex].description);
+
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     setTimeout(() => {
+      descriptionQuestion.style.display = "none";
       resetAnswerColors();
       showQuestion();
       resetTimer();
-    }, 1000); // Petite pause pour donner du temps à voir le résultat
+    }, 10000);
   } else {
     setTimeout(endQuiz, 1000);
   }
 }
 
-function resetAnswerColors() {
-  const answerElements = document.querySelectorAll(".answer-button");
-  answerElements.forEach((answerIndex) => {
-    answerIndex.style.backgroundColor = "#6c0433"; // Réinitialise à la couleur par défaut
-  });
-}
 function showFeedback(message, type) {
-  // Simple feedback à l'utilisateur sans alerte intrusive
   const feedback = document.createElement("section");
   feedback.textContent = message;
   feedback.className = type === "success" ? "success" : "error";
   document.body.appendChild(feedback);
   setTimeout(() => feedback.remove(), 1000);
+}
+
+function showDescription(description) {
+  descriptionQuestion.textContent = description;
+  descriptionQuestion.style.display = "block";
+}
+
+function resetAnswerColors() {
+  const answerElements = document.querySelectorAll("button");
+  answerElements.forEach((button) => {
+    button.style.backgroundColor = "#6c0433";
+  });
 }
 
 function endQuiz() {
@@ -114,19 +202,19 @@ function resetQuiz() {
   score = 0;
   scoreDisplay.textContent = score;
   recapContainer.style.display = "none";
-  firstContainer.style.display = "block"; // Réafficher l'écran de démarrage
+  firstContainer.style.display = "block";
   questionContainer.style.display = "none";
 }
 
 function startTimer() {
-  timerTime = 10;
+  timerTime = 20;
   updateTimerDisplay();
   timerInterval = setInterval(() => {
     timerTime--;
     updateTimerDisplay();
     if (timerTime === 0) {
       clearInterval(timerInterval);
-      selectAnswer(-1); // Ne pas afficher de feedback
+      selectAnswer(-1); // Si temps écoulé, aucune réponse sélectionnée
     }
   }, 1000);
 }
