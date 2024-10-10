@@ -68,10 +68,12 @@ button:hover {
   max-width: 80%;
 }
 #description {
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   border: solid 2px #6c0433;
   width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   height: auto;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
@@ -100,6 +102,43 @@ button:hover {
 
 .answer-button:hover {
   background-color: #07376a;
+}
+@keyframes showFeedback {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.feedback-message {
+  position: fixed;
+  top: 50%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  color: white;
+  padding: 20px;
+  margin-right: 100px;
+  border-radius: 10px;
+  z-index: 999;
+  opacity: 0;
+  animation: showFeedback 3s ease forwards;
+}
+
+.success {
+  background-color: green;
+}
+
+.error {
+  background-color: red;
 }
 
 #recapContainer {
@@ -141,9 +180,16 @@ button:hover {
   font-size: 2rem;
   margin-top: 2rem;
 }
+svg {
+  position: absolute;
+  margin-bottom: 15%;
+}
 
 #timer {
-  content: url(image/chrono2.png);
   width: 80px;
   height: 80px;
+}
+
+section img {
+  width: 40%;
 }

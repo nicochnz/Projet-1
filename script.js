@@ -28,7 +28,8 @@ const questions = [
   {
     question: "Quelle est la capitale de la France ?",
     answers: ["Paris", "Bordeaux", "Lyon", "Marseille"],
-    description: "blabla",
+    description:
+      "Paris devient définitivement la capitale en 1792, malgré, des défaites militaires contraignant des gouvernements à s'exiler hors de Paris, sans enlever à la ville son statut",
     correct: 0,
   },
   {
@@ -39,7 +40,8 @@ const questions = [
       "Un masque porté lors des festivals bordelais",
       "Un accessoire de mode du XVIIe siècle",
     ],
-    description: "blabla",
+    description:
+      "Bordeaux présente plus de 3 000 mascarons qui participent à l'ornementation des façades et des fontaines de la ville. ",
     correct: 0,
   },
   {
@@ -51,13 +53,15 @@ const questions = [
       "Un amphithéâtre romain",
       " Un parking pour carrosses",
     ],
-    description: "blabla",
+    description:
+      "Né en 1924, avant le stade Chaban, le premier parc des sports Lescure fut imaginé par un certain Robert Hüe, pour accueillir un grand vélodrome. ",
     correct: 1,
   },
   {
     question: "Quand est apparu le premier tramway à Bordeaux ?",
     answers: ["1932", "2003", "2000", "1880"],
-    description: "blabla",
+    description:
+      "Lors de sa mise en circulation le 4 mai 1880, la première ligne bordelaise présentait des tramways tractés par des chevaux.",
     correct: 3,
   },
   {
@@ -68,7 +72,8 @@ const questions = [
       "Les bâtiments composant la Place de la Bourse.",
       "Une échoppe célèbre pour ses huîtres.",
     ],
-    description: "blabla",
+    description:
+      "Palais impérial de Napoléon Ier en 1808 et palais royal en 1815 sous Louis XVIII, le palais Rohan devient hôtel de ville en 1835. ",
     correct: 1,
   },
   {
@@ -185,9 +190,13 @@ function selectAnswer(answerIndex) {
 function showFeedback(message, type) {
   const feedback = document.createElement("section");
   feedback.textContent = message;
-  feedback.className = type === "success" ? "success" : "error";
+  feedback.className = `feedback-message ${
+    type === "success" ? "success" : "error"
+  }`;
   document.body.appendChild(feedback);
-  setTimeout(() => feedback.remove(), 1000);
+  setTimeout(() => {
+    feedback.remove();
+  }, 2000);
 }
 
 function showDescription(description) {

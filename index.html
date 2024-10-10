@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Game</title>
-    <link rel="icon" href="image/favicon.png" type="image/x-icon">
+    <link rel="icon" href="image/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -19,11 +19,13 @@
     <section
       class="question-container"
       id="questionContainer"
-      style="display: none">
+      style="display: none"
+    >
       <p class="question" id="questionText"></p>
       <p>Score: <span id="score">0</span></p>
-      <p><br></p>
-      <p><span id="timer">10</span></p>
+      <p><br /></p>
+      <article id="timer"></article>
+
       <section class="answer-buttons" id="answerButtons">
         <button class="answer-button" data-index="0" onclick="selectAnswer(0)">
           Réponse 1
