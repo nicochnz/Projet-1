@@ -54,7 +54,7 @@
         <button class="answer-button" data-index="3" onclick="selectAnswer(3)">
           Réponse 4
         </button>
-        <article id="timer"></article>
+        <article id="timer"><span id="timer-seconds">20s</span></article>
       </section>
     </section>
     <p id="description" style="display: none"></p>
@@ -62,7 +62,10 @@
       <p>Votre score final est : <span id="finalScore">0</span></p>
       <button id="restartButton">Retour à l'accueil</button>
     </section>
-
+    <audio controls autoplay loop>
+      <source src="./music/chameleon_nmKBEETZ.mp3" type="audio/mp3" />
+      Votre navigateur ne supporte pas l'élément audio.
+    </audio>
     <script src="script.js"></script>
   </body>
 </html>
