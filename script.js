@@ -136,10 +136,14 @@ let timerInterval;
 let timerTime;
 
 function startQuiz() {
-  firstContainer.style.display = "none";
-  questionContainer.style.display = "flex";
-  showQuestion();
-  startTimer();
+  if (input.value === "") {
+    alert("Veuillez écrire votre pseudo");
+  } else {
+    firstContainer.style.display = "none";
+    questionContainer.style.display = "flex";
+    showQuestion();
+    startTimer();
+  }
 }
 
 function showQuestion() {
