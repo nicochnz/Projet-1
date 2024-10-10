@@ -1,87 +1,82 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-:root{
-    --primaryFont: "Lobster", sans-serif;
-    --textFont: "Chakra Petch", sans-serif;
-}
-
-
-.header{
-    display: flex;
-    justify-content: space-around;
-    margin: 1rem;
+:root {
+  --primaryFont: "Lobster", sans-serif;
+  --textFont: "Chakra Petch", sans-serif;
 }
 
-body{
-    background-image: url(./place-bourse-bordeaux.jpg.jpg)
-}
-h1{
-    font-family:  var(--primaryFont);
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    background-color: #6c0433;
-    color: whitesmoke;
-    border-radius: 20px;
-    margin-inline: 1rem;
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
 }
 
-section{
-    font-family: var(--textFont);
-    display: grid;
-    justify-content: center;
-    grid-template-rows: 4rem 2rem 4rem;
-	grid-template-columns: 6rem 2rem 6rem;
-	height: 100%;
-    gap: 10px;
-        
+body {
+  background-image: url(./place-bourse-bordeaux.jpg.jpg);
+}
+h1 {
+  font-family: var(--primaryFont);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background-color: #6c0433;
+  color: whitesmoke;
+  border-radius: 20px;
+  margin-inline: 1rem;
 }
 
-button{
-    border-radius: 10px;
-    background-color: #6c0433;
-    color: whitesmoke;
-}
-button:nth-child(1){
-    grid-column-start: 1;
-    grid-column-end: 2;
-    justify-self: stretch;
-    text-align: center; 
+section {
+  font-family: var(--textFont);
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 4rem 2rem 4rem;
+  grid-template-columns: 6rem 2rem 6rem;
+  height: 100%;
+  gap: 10px;
 }
 
-button:nth-child(2){
-    grid-column-start: 3;
-    grid-column-end: 4;
+button {
+  border-radius: 10px;
+  background-color: #6c0433;
+  color: whitesmoke;
+}
+button:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-self: stretch;
+  text-align: center;
 }
 
-button:nth-child(3){
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4;
+button:nth-child(2) {
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
-button:nth-child(4){
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
+button:nth-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
-.timer{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    display: grid;
-    justify-self: center;
+button:nth-child(4) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
-
-
+.timer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: grid;
+  justify-self: center;
+}
 
 /*#buttonA a la place je met nth{
     grid-column-start: 1;
@@ -113,6 +108,3 @@ button:nth-child(4){
         display: grid;
     justify-self: center;
 } */
-
-
-
