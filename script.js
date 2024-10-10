@@ -128,6 +128,7 @@ const questions = [
 let currentQuestionIndex = 0;
 let score = 0;
 let timerInterval;
+let timerTime;
 
 function startQuiz() {
   firstContainer.style.display = "none";
@@ -220,7 +221,7 @@ function resetQuiz() {
 }
 
 function startTimer() {
-  timerTime = 20;
+  let timerTime = 20;
   updateTimerDisplay();
   timerInterval = setInterval(() => {
     timerTime--;
