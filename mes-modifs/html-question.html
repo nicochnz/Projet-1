@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css-question.css">
     <title>Question</title>
 </head>
 <body>
     <header class="header">
         <h2>Q1:</h2>
-        <span id="score">Score</span>
+        <span id="score">Score :</span>
     </header>
     <main>
         <h1>"intitulé de la question"</h1>
-        <section>
+        <!--<section class="button">
             
                 <button id="buttonA">Réponse A</button>
             
@@ -29,7 +35,22 @@
             
                 <span id="timer">Timer</span>
             
-        </section>
+        </section>-->
+        <section class="answer-buttons" id="answerButtons">
+            <button class="answer-button" data-index="0" onclick="selectAnswer(0)">
+              Réponse 1
+            </button>
+            <button class="answer-button" data-index="1" onclick="selectAnswer(1)">
+              Réponse 2
+            </button>
+            <button class="answer-button" data-index="2" onclick="selectAnswer(2)">
+              Réponse 3
+            </button>
+            <button class="answer-button" data-index="3" onclick="selectAnswer(3)">
+              Réponse 4
+            </button>
+            <span class="timer">Timer</span>
+          </section>
     </main>
 </body>
 </html>
