@@ -141,3 +141,9 @@ button:hover {
   font-size: 2rem;
   margin-top: 2rem;
 }
+
+#timer {
+  content: url(image/chrono2.png);
+  width: 80px;
+  height: 80px;
+}
