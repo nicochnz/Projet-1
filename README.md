@@ -18,3 +18,8 @@ Pour la transition des questions faire un truc un peu joli pour pas que l'affich
 
 Ajout de mettre le choix à l'utilisateur d'ajouter son prenom et sur le felicitation de fin ecrire aussi son username
 Custom le timer
+
+
+
+
+J'ai rajouté les deux polices sur le HTML dans mes-modifs.
