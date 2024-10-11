@@ -146,17 +146,18 @@ header {
   border: none;
   cursor: pointer;
   padding: 10px;
+  background-color: none;
 }
 
-.sound-class:hover {
-  color: #07376a;
-  background: none;
+button .sound-class {
+  background-color: none;
 }
 .img-sound {
   bottom: 3rem;
   margin-bottom: 50px;
   width: 70px;
   height: 70px;
+  background-color: none;
 }
 
 .img-sound:hover {
