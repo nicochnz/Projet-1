@@ -85,7 +85,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.384);
   padding: 20px;
   border: solid 2px #6c0433;
   border-radius: 10px;
@@ -140,6 +140,27 @@ header {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 20px;
+}
+.sound-class {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.sound-class:hover {
+  color: #07376a;
+  background: none;
+}
+.img-sound {
+  bottom: 3rem;
+  margin-bottom: 50px;
+  width: 70px;
+  height: 70px;
+}
+
+.img-sound:hover {
+  opacity: 0.8;
 }
 
 .answer-button:hover {
