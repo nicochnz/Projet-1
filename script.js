@@ -86,7 +86,7 @@ const questions = [
       "Le vieux parlé bordelais. ",
       "Une sorte de fromage.",
     ],
-    description: "blabla",
+    description: "Le bordeluche est un registre de langue autrefois très usité à Bordeaux. Il a perdu un peu de terrain, mais beaucoup de Bordelais emploient des mots spécifiques à leur région, sans le savoir. Ca daille gavé !",
     correct: 2,
   },
   {
@@ -97,25 +97,25 @@ const questions = [
       "Des bordures du fleuve",
       "D’une famille noble locale.",
     ],
-    description: "blabla",
+    description: "« Burdigala » serait composé de deux racines aquitaniques burd- qui signifie « boueux » et de cal- qui voudrait dire « abri, crique » et signifierait à peu près « abri dans les marais » en (proto-basque). Ce nom a évolué en Bordigala, puis Bordale en basque, Bordèu en gascon et « Bordeaux » en français.",
     correct: 0,
   },
   {
     question: "Combien de ponts y a-t-il sur l’agglomération bordelaise ?",
     answers: ["3", "4", "5", "6"],
-    description: "blabla",
+    description: "Bordeaux métropole possède huit ponts qui traversent la Garonne ; du nord au sud : le pont d'Aquitaine, le pont Jacques-Chaban-Delmas, le pont de pierre, le pont Saint-Jean, le pont ferroviaire, la passerelle Eiffel (désaffectée), le pont Simone-Veil et le pont François-Mitterrand.",
     correct: 2,
   },
   {
     question: "De quelle couleur est la Garonne sur son tronçon bordelais ?",
     answers: ["Marron", "Beige", "Blonde", "Juste gavé sale"],
-    description: "blabla",
+    description: "blUne réaction appelée floculation entraine alors l'agglomération des particules d'argile que les courants de marée remettent en suspension.abla",
     correct: 2,
   },
   {
     question: "En quelle année l’Union Bordeaux Bègles a-t-elle été créée ?",
     answers: ["1969", "1991", "2007", "2006"],
-    description: "blabla",
+    description: "L'Union Bordeaux Bègles né de la fusion en 2006 du Stade bordelais université club et du Club athlétique béglais. Il est basé à Bègles dans la banlieue sud de Bordeaux en Gironde.",
     correct: 3,
   },
   {
@@ -127,7 +127,7 @@ const questions = [
   {
     question: "Quelle est le nom de la vague bordelaise ?",
     answers: ["Le mascaret", "Le mascara", "La mascarade", "Le masque à Ray"],
-    description: "blabla",
+    description: "Le mascaret correspond à une brusque surélévation de l'eau d'un fleuve ou d'un estuaire provoqué par l'onde de la marée montante lors des grandes marées. Il se produit dans l'embouchure et le cours inférieur de certains cours d'eau lorsque leur courant est contrarié par le flux de la marée montante. Imperceptible la plupart du temps, il se manifeste au moment des nouvelles et pleines lunes. ",
     correct: 0,
   },
 ];
