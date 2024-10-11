@@ -13,8 +13,7 @@ const descriptionQuestion = document.getElementById("description");
 const h2RecapContainer = document.createElement("h2");
 const body = document.querySelector("body");
 const input = document.createElement("input");
-
-const numberQuestion = document.getElementById("numberQuestion");
+let numberQuestion = document.getElementById("numberQuestion");
 const audio = document.getElementById("myAudio");
 const soundButton = document.getElementById("sound-id");
 const imgAudio = document.querySelector(".img-sound");
@@ -117,7 +116,7 @@ const questions = [
     question: "De quelle couleur est la Garonne sur son tronçon bordelais ?",
     answers: ["Marron", "Beige", "Blonde", "Juste gavé sale"],
     description:
-      "blUne réaction appelée floculation entraine alors l'agglomération des particules d'argile que les courants de marée remettent en suspension.abla",
+      "Blonde réaction appelée floculation entraine alors l'agglomération des particules d'argile que les courants de marée remettent en suspension.",
     correct: 2,
   },
   {
@@ -127,17 +126,12 @@ const questions = [
       "L'Union Bordeaux Bègles né de la fusion en 2006 du Stade bordelais université club et du Club athlétique béglais. Il est basé à Bègles dans la banlieue sud de Bordeaux en Gironde.",
     correct: 3,
   },
-  {
-    question: "Quand a été créé le cannelé bordelais ?",
-    answers: ["XVI siècle", "XVIIIe siècle", "En 2012", "IIIe siècle"],
-    description: "blabla",
-    correct: 1,
-  },
+
   {
     question: "Quelle est le nom de la vague bordelaise ?",
     answers: ["Le mascaret", "Le mascara", "La mascarade", "Le masque à Ray"],
     description:
-      "Le mascaret correspond à une brusque surélévation de l'eau d'un fleuve ou d'un estuaire provoqué par l'onde de la marée montante lors des grandes marées. Il se produit dans l'embouchure et le cours inférieur de certains cours d'eau lorsque leur courant est contrarié par le flux de la marée montante. Imperceptible la plupart du temps, il se manifeste au moment des nouvelles et pleines lunes. ",
+      "Le mascaret correspond à une brusque surélévation de l'eau d'un fleuve ou d'un estuaire provoqué par l'onde de la marée montante lors des grandes marées.Imperceptible la plupart du temps, il se manifeste au moment des nouvelles et pleines lunes. ",
     correct: 0,
   },
 ];
@@ -146,14 +140,17 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timerInterval;
 let timerTime = 20;
+audio.loop = true;
 
 soundButton.addEventListener("click", function () {
   if (audio.paused) {
     audio.play();
     imgAudio.src = "image/sound-on.png";
+    imgAudio.style.backgroundColor = "none";
   } else {
     audio.pause();
     imgAudio.src = "image/sound-off.png";
+    imgAudio.style.backgroundColor = "none";
   }
 });
 
@@ -161,9 +158,9 @@ function startQuiz() {
   if (input.value === "") {
     alert("Veuillez écrire votre pseudo");
   } else {
-    body.style.firstContainer.style.display = "none";
+    firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
-    createBackgroundVideo("video/BXdrone.mp4");
+    createBackgroundVideo("video/Bordeaux.mov");
     showQuestion();
     startTimer();
   }
@@ -171,7 +168,7 @@ function startQuiz() {
 
 function createBackgroundVideo(videoSrc) {
   const video = document.createElement("video");
-  video.src = "video/BXdrone.mp4";
+  video.src = "video/Bordeaux.mov";
   video.autoplay = true;
   video.muted = true;
   video.loop = true;
