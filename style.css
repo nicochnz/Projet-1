@@ -149,6 +149,10 @@ header {
   background-color: none;
 }
 
+#sound-id {
+  cursor: pointer;
+}
+
 button .sound-class {
   background-color: none;
 }
