@@ -41,6 +41,9 @@ button {
   border-radius: 10px;
   transition: background-color 0.3s;
 }
+button:hover {
+  background-color: #07376a;
+}
 
 button:nth-child(1) {
   grid-column-start: 1;
@@ -66,10 +69,6 @@ button:nth-child(4) {
   grid-column-end: 4;
   grid-row-start: 3;
   grid-row-end: 4;
-}
-
-button:hover {
-  background-color: #07376a;
 }
 
 #firstContainer {

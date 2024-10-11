@@ -13,7 +13,6 @@ const descriptionQuestion = document.getElementById("description");
 const h2RecapContainer = document.createElement("h2");
 const body = document.querySelector("body");
 const input = document.createElement("input");
-let numberQuestion = document.getElementById("numberQuestion");
 
 const numberQuestion = document.getElementById("numberQuestion");
 const audio = document.getElementById("myAudio");
