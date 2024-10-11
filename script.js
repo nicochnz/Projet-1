@@ -13,7 +13,9 @@ const descriptionQuestion = document.getElementById("description");
 const h2RecapContainer = document.createElement("h2");
 const input = document.createElement("input");
 const numberQuestion = document.getElementById("numberQuestion");
-
+const audio = document.getElementById("myAudio");
+const soundButton = document.getElementById("sound-id");
+const imgAudio = document.querySelector(".img-sound");
 input.type = "text";
 input.placeholder = "Entrez votre surnom...";
 input.className = "inputName";
@@ -137,15 +139,45 @@ let score = 0;
 let timerInterval;
 let timerTime = 20;
 
+soundButton.addEventListener("click", function () {
+  if (audio.paused) {
+    audio.play();
+    imgAudio.src = "image/sound-on.png";
+  } else {
+    audio.pause();
+    imgAudio.src = "image/sound-off.png";
+  }
+});
+
 function startQuiz() {
   if (input.value === "") {
     alert("Veuillez écrire votre pseudo");
   } else {
     firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
+    createBackgroundVideo("video/BXdrone.mp4");
     showQuestion();
     startTimer();
   }
+}
+
+function createBackgroundVideo(videoSrc) {
+  const video = document.createElement("video");
+  video.src = "video/BXdrone.mp4";
+  video.autoplay = true;
+  video.muted = true;
+  video.loop = true;
+  video.style.position = "fixed";
+  video.style.top = "50%";
+  video.style.left = "50%";
+  video.style.minWidth = "100%";
+  video.style.minHeight = "100%";
+  video.style.width = "auto";
+  video.style.height = "auto";
+  video.style.zIndex = "-1";
+  video.style.transform = "translate(-50%, -50%)";
+  video.style.objectFit = "cover";
+  document.body.appendChild(video);
 }
 
 function showQuestion() {
@@ -188,7 +220,7 @@ function selectAnswer(answerIndex) {
       resetAnswerColors();
       showQuestion();
       resetTimer();
-    }, 2000);
+    }, 8000);
   } else {
     setTimeout(endQuiz, 1000);
   }
