@@ -11,8 +11,9 @@ const timerSpan = document.getElementById("timer");
 const allButton = document.querySelectorAll("button");
 const descriptionQuestion = document.getElementById("description");
 const h2RecapContainer = document.createElement("h2");
+const body = document.querySelector("body");
 const input = document.createElement("input");
-const numberQuestion = document.getElementById("numberQuestion");
+let numberQuestion = document.getElementById("numberQuestion");
 
 input.type = "text";
 input.placeholder = "Entrez votre surnom...";
@@ -141,16 +142,20 @@ function startQuiz() {
   if (input.value === "") {
     alert("Veuillez écrire votre pseudo");
   } else {
-    firstContainer.style.display = "none";
+    body.style.firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
     showQuestion();
     startTimer();
+    body.style.backgroundImage = "none";
   }
 }
 
 function showQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
   questionText.textContent = currentQuestion.question;
+  numberQuestion.textContent = `Question ${currentQuestionIndex + 1} sur ${
+    questions.length
+  }`;
   const buttons = answerButtons.querySelectorAll("button");
   buttons.forEach((button, index) => {
     button.textContent = currentQuestion.answers[index];
@@ -173,10 +178,16 @@ function selectAnswer(answerIndex) {
     scoreDisplay.textContent = score;
     showFeedback("Bonne réponse !", "success");
     selectedAnswerElement.style.backgroundColor = "green";
+    const audioCorrect = document.createElement("audio");
+    audioCorrect.src = "./music/niceJob.m4a";
+    audioCorrect.play();
   } else {
     showFeedback("Mauvaise réponse.", "error");
     selectedAnswerElement.style.backgroundColor = "red";
     correctAnswerElement.style.backgroundColor = "green";
+    const audioIncorrect = document.createElement("audio");
+    audioIncorrect.src = "./music/notToday.m4a";
+    audioIncorrect.play();
   }
 
   showDescription(questions[currentQuestionIndex].description);
@@ -256,9 +267,6 @@ function resetTimer() {
 function updateTimerDisplay() {
   timerSpan.textContent = timerTime;
 }
-
-let totalQuestion = 12;
-let currentNumber = 0;
 
 startButton.addEventListener("click", startQuiz);
 restartButton.addEventListener("click", resetQuiz);
