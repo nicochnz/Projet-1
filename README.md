@@ -8,3 +8,4 @@ Un bouton pouvoir qui aura effet de delete 2 mauvaises réponses mais celui-ci p
 Faire un bouton retour à l'accueil
 
 Faire la difficulté hard
+Faire un systeme de partage de points
