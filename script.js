@@ -147,6 +147,7 @@ audio.loop = true;
 soundButton.addEventListener("click", function () {
   if (audio.paused) {
     audio.play();
+    audio.volume = "0.5";
     imgAudio.src = "image/sound-on.png";
     imgAudio.style.backgroundColor = "none";
   } else {
