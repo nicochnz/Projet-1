@@ -11,7 +11,10 @@ const timerSpan = document.getElementById("timer");
 const allButton = document.querySelectorAll("button");
 const descriptionQuestion = document.getElementById("description");
 const h2RecapContainer = document.createElement("h2");
+const body = document.querySelector("body");
 const input = document.createElement("input");
+let numberQuestion = document.getElementById("numberQuestion");
+
 const numberQuestion = document.getElementById("numberQuestion");
 const audio = document.getElementById("myAudio");
 const soundButton = document.getElementById("sound-id");
@@ -88,7 +91,8 @@ const questions = [
       "Le vieux parlé bordelais. ",
       "Une sorte de fromage.",
     ],
-    description: "Le bordeluche est un registre de langue autrefois très usité à Bordeaux. Il a perdu un peu de terrain, mais beaucoup de Bordelais emploient des mots spécifiques à leur région, sans le savoir. Ca daille gavé !",
+    description:
+      "Le bordeluche est un registre de langue autrefois très usité à Bordeaux. Il a perdu un peu de terrain, mais beaucoup de Bordelais emploient des mots spécifiques à leur région, sans le savoir. Ca daille gavé !",
     correct: 2,
   },
   {
@@ -99,25 +103,29 @@ const questions = [
       "Des bordures du fleuve",
       "D’une famille noble locale.",
     ],
-    description: "« Burdigala » serait composé de deux racines aquitaniques burd- qui signifie « boueux » et de cal- qui voudrait dire « abri, crique » et signifierait à peu près « abri dans les marais » en (proto-basque). Ce nom a évolué en Bordigala, puis Bordale en basque, Bordèu en gascon et « Bordeaux » en français.",
+    description:
+      "« Burdigala » serait composé de deux racines aquitaniques burd- qui signifie « boueux » et de cal- qui voudrait dire « abri, crique » et signifierait à peu près « abri dans les marais » en (proto-basque). Ce nom a évolué en Bordigala, puis Bordale en basque, Bordèu en gascon et « Bordeaux » en français.",
     correct: 0,
   },
   {
     question: "Combien de ponts y a-t-il sur l’agglomération bordelaise ?",
     answers: ["3", "4", "5", "6"],
-    description: "Bordeaux métropole possède huit ponts qui traversent la Garonne ; du nord au sud : le pont d'Aquitaine, le pont Jacques-Chaban-Delmas, le pont de pierre, le pont Saint-Jean, le pont ferroviaire, la passerelle Eiffel (désaffectée), le pont Simone-Veil et le pont François-Mitterrand.",
+    description:
+      "Bordeaux métropole possède huit ponts qui traversent la Garonne ; du nord au sud : le pont d'Aquitaine, le pont Jacques-Chaban-Delmas, le pont de pierre, le pont Saint-Jean, le pont ferroviaire, la passerelle Eiffel (désaffectée), le pont Simone-Veil et le pont François-Mitterrand.",
     correct: 2,
   },
   {
     question: "De quelle couleur est la Garonne sur son tronçon bordelais ?",
     answers: ["Marron", "Beige", "Blonde", "Juste gavé sale"],
-    description: "blUne réaction appelée floculation entraine alors l'agglomération des particules d'argile que les courants de marée remettent en suspension.abla",
+    description:
+      "blUne réaction appelée floculation entraine alors l'agglomération des particules d'argile que les courants de marée remettent en suspension.abla",
     correct: 2,
   },
   {
     question: "En quelle année l’Union Bordeaux Bègles a-t-elle été créée ?",
     answers: ["1969", "1991", "2007", "2006"],
-    description: "L'Union Bordeaux Bègles né de la fusion en 2006 du Stade bordelais université club et du Club athlétique béglais. Il est basé à Bègles dans la banlieue sud de Bordeaux en Gironde.",
+    description:
+      "L'Union Bordeaux Bègles né de la fusion en 2006 du Stade bordelais université club et du Club athlétique béglais. Il est basé à Bègles dans la banlieue sud de Bordeaux en Gironde.",
     correct: 3,
   },
   {
@@ -129,7 +137,8 @@ const questions = [
   {
     question: "Quelle est le nom de la vague bordelaise ?",
     answers: ["Le mascaret", "Le mascara", "La mascarade", "Le masque à Ray"],
-    description: "Le mascaret correspond à une brusque surélévation de l'eau d'un fleuve ou d'un estuaire provoqué par l'onde de la marée montante lors des grandes marées. Il se produit dans l'embouchure et le cours inférieur de certains cours d'eau lorsque leur courant est contrarié par le flux de la marée montante. Imperceptible la plupart du temps, il se manifeste au moment des nouvelles et pleines lunes. ",
+    description:
+      "Le mascaret correspond à une brusque surélévation de l'eau d'un fleuve ou d'un estuaire provoqué par l'onde de la marée montante lors des grandes marées. Il se produit dans l'embouchure et le cours inférieur de certains cours d'eau lorsque leur courant est contrarié par le flux de la marée montante. Imperceptible la plupart du temps, il se manifeste au moment des nouvelles et pleines lunes. ",
     correct: 0,
   },
 ];
@@ -153,7 +162,7 @@ function startQuiz() {
   if (input.value === "") {
     alert("Veuillez écrire votre pseudo");
   } else {
-    firstContainer.style.display = "none";
+    body.style.firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
     createBackgroundVideo("video/BXdrone.mp4");
     showQuestion();
@@ -183,6 +192,9 @@ function createBackgroundVideo(videoSrc) {
 function showQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
   questionText.textContent = currentQuestion.question;
+  numberQuestion.textContent = `Question ${currentQuestionIndex + 1} sur ${
+    questions.length
+  }`;
   const buttons = answerButtons.querySelectorAll("button");
   buttons.forEach((button, index) => {
     button.textContent = currentQuestion.answers[index];
@@ -205,10 +217,16 @@ function selectAnswer(answerIndex) {
     scoreDisplay.textContent = score;
     showFeedback("Bonne réponse !", "success");
     selectedAnswerElement.style.backgroundColor = "green";
+    const audioCorrect = document.createElement("audio");
+    audioCorrect.src = "./music/niceJob.m4a";
+    audioCorrect.play();
   } else {
     showFeedback("Mauvaise réponse.", "error");
     selectedAnswerElement.style.backgroundColor = "red";
     correctAnswerElement.style.backgroundColor = "green";
+    const audioIncorrect = document.createElement("audio");
+    audioIncorrect.src = "./music/notToday.m4a";
+    audioIncorrect.play();
   }
 
   showDescription(questions[currentQuestionIndex].description);
@@ -288,9 +306,6 @@ function resetTimer() {
 function updateTimerDisplay() {
   timerSpan.textContent = timerTime;
 }
-
-let totalQuestion = 12;
-let currentNumber = 0;
 
 startButton.addEventListener("click", startQuiz);
 restartButton.addEventListener("click", resetQuiz);
