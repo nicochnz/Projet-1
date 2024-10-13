@@ -18,17 +18,25 @@ const audio = document.getElementById("myAudio");
 const soundButton = document.getElementById("sound-id");
 const imgAudio = document.querySelector(".img-sound");
 const video = document.createElement("video");
+const imgRecap = document.createElement("img");
+const classementBtn = document.createElement("button");
+const classementContainer = document.createElement("section");
+classementContainer.className = "classementContainer";
+document.body.appendChild(classementContainer);
+recapContainer.appendChild(classementBtn);
+recapContainer.appendChild(imgRecap);
+imgRecap.src = "./image/painAuChocolat.jpg";
+imgRecap.className = "imgRecap";
+input.className = "inputName";
+classementBtn.className = "button";
+h2RecapContainer.className = "h2RecapContainer";
+classementBtn.textContent = "Voir le classement";
 input.type = "text";
 input.placeholder = "Entrez votre surnom...";
-input.className = "inputName";
-input.required = "required";
 firstContainer.appendChild(input);
 recapContainer.appendChild(h2RecapContainer);
-
-input.addEventListener("input", function () {
-  const userName = this.value;
-  h2RecapContainer.textContent = `Félicitation ${userName} !`;
-});
+h2RecapContainer.style.fontSize = "2rem";
+classementBtn.style.fontSize = "1rem";
 
 const questions = [
   {
@@ -138,7 +146,7 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let score = 0;
+let score = 6;
 let timerInterval;
 let timerTime = 20;
 audio.loop = true;
@@ -197,8 +205,16 @@ function showQuestion() {
     button.textContent = currentQuestion.answers[index];
     button.dataset.index = index;
     button.onclick = () => selectAnswer(index);
+
     video.style.display = "block";
   });
+}
+
+function randomQuestion(questions) {
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], (questions[j] = questions[j]), questions[i]];
+  }
 }
 
 function selectAnswer(answerIndex) {
@@ -276,6 +292,20 @@ function endQuiz() {
   clearInterval(timerInterval);
 }
 
+input.addEventListener("input", function () {
+  const userName = this.value;
+  if (score >= 8) {
+    imgRecap.src = "./image/Chocolatine.jpg";
+    h2RecapContainer.textContent = `Félicitation ${userName}, tu fais parti de l'élite Bordelais`;
+  } else if (score > 5 && score < 8) {
+    h2RecapContainer.textContent = `T'es GAVE fort ${userName}`;
+    imgRecap.src = "./image/Chocolatine.jpg";
+  } else {
+    imgRecap.src = "./image/painAuChocolat.jpg";
+    h2RecapContainer.textContent = `Désolé ${userName}, t'es pas autorisé à dire chocolatine..`;
+  }
+});
+
 function resetQuiz() {
   currentQuestionIndex = 0;
   score = 0;
@@ -283,6 +313,7 @@ function resetQuiz() {
   recapContainer.style.display = "none";
   firstContainer.style.display = "block";
   questionContainer.style.display = "none";
+  input.value = "";
 }
 
 function startTimer() {
@@ -306,6 +337,27 @@ function resetTimer() {
 function updateTimerDisplay() {
   timerSpan.textContent = timerTime;
 }
+
+const shareBtn = document.createElement("button");
+
+shareBtn.id = "shareBtn";
+
+recapContainer.appendChild(shareBtn);
+shareBtn.classList.add("button");
+shareBtn.textContent = "Partagez votre Score";
+shareBtn.style.fontSize = "1rem";
+
+shareBtn.addEventListener("click", async () => {
+  navigator.share({
+    title: "Partagez votre Score",
+    url: "J'ai pas d'URL",
+  });
+});
+
+classementBtn.addEventListener("click", function () {
+  recapContainer.style.display = "none";
+  classementContainer.style.display = "block";
+});
 
 startButton.addEventListener("click", startQuiz);
 restartButton.addEventListener("click", resetQuiz);
