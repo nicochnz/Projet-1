@@ -146,22 +146,21 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let score = 10;
+let score = 0;
 let timerInterval;
 let timerTime = 20;
-let isRunning = false;
+let isSoundOn = true;
 audio.loop = true;
 
 soundButton.addEventListener("click", function () {
   if (audio.paused) {
     audio.play();
-    audio.volume = 0.5;
+    isSoundOn = true;
     imgAudio.src = "image/sound-on.png";
-    imgAudio.style.backgroundColor = "none";
   } else {
     audio.pause();
+    isSoundOn = false;
     imgAudio.src = "image/sound-off.png";
-    imgAudio.style.backgroundColor = "none";
   }
 });
 
@@ -232,16 +231,20 @@ function selectAnswer(answerIndex) {
     scoreDisplay.textContent = score;
     showFeedback("Bonne réponse !", "success");
     selectedAnswerElement.style.backgroundColor = "green";
-    const audioCorrect = document.createElement("audio");
-    audioCorrect.src = "./music/niceJob.m4a";
-    audioCorrect.play();
+
+    if (isSoundOn) {
+      const audioCorrect = new Audio("./music/niceJob.m4a");
+      audioCorrect.play();
+    }
   } else {
     showFeedback("Mauvaise réponse.", "error");
     selectedAnswerElement.style.backgroundColor = "red";
     correctAnswerElement.style.backgroundColor = "green";
-    const audioIncorrect = document.createElement("audio");
-    audioIncorrect.src = "./music/notToday.m4a";
-    audioIncorrect.play();
+
+    if (isSoundOn) {
+      const audioIncorrect = new Audio("./music/notToday.m4a");
+      audioIncorrect.play();
+    }
   }
 
   showDescription(questions[currentQuestionIndex].description);
@@ -254,7 +257,7 @@ function selectAnswer(answerIndex) {
       resetTimer();
     }, 2000);
   } else {
-    setTimeout(endQuiz, 3000);
+    setTimeout(endQuiz, 8000);
   }
 }
 
