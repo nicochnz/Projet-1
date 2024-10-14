@@ -83,15 +83,15 @@ button:nth-child(4) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.384);
+  background-color: rgba(255, 255, 255, 0.571);
   padding: 20px;
-  border: solid 2px #6c0433;
+  box-shadow: 2px 1px 15px 8px #7b6f6f21;
+
   border-radius: 10px;
   /* Ajout d'une hauteur pour garantir l'affichage correct */
   width: 80%;
-  margin-right: 5%;
   font-family: var(--textFont);
+  margin-top: 3rem;
 }
 
 header {
@@ -99,24 +99,25 @@ header {
   justify-content: space-between;
   align-content: center;
   width: 100%;
+  font-family: var(--primaryFont);
 }
 
 #description {
-  font-size: 20px;
+  font-size: 1rem;
   color: black;
   border: solid 2px #6c0433;
-  width: 50%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 90%;
+  height: 40%;
   height: auto;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: 2px 2px 2px #6c0433;
   overflow-wrap: break-word;
   margin-top: 30px;
+  transform: translateY(-20px);
 }
 .question {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   height: auto;
   width: auto;
@@ -132,6 +133,8 @@ header {
   justify-content: center;
   align-items: center;
   min-width: 150px;
+  margin-top: 1rem;
+  height: auto;
 }
 #answerButtons {
   font-family: var(--textFont);
@@ -156,8 +159,6 @@ button .sound-class {
   background-color: none;
 }
 .img-sound {
-  bottom: 3rem;
-  margin-bottom: 50px;
   width: 70px;
   height: 70px;
   background-color: none;
@@ -217,7 +218,7 @@ button .sound-class {
   color: #6c0433;
   font-size: 30px;
   font-weight: bold;
-  padding: 20px;
+  padding-top: 20px;
   border-radius: 10px;
   width: 80%;
   height: 80%;
@@ -245,7 +246,7 @@ button .sound-class {
   border-radius: 10px;
   border: 0px solid;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-top: 2rem;
 }
 
@@ -254,18 +255,21 @@ button .sound-class {
   background-image: url("image/chrono2.png");
   background-size: cover;
   background-position: center;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translate(40px, -80px);
   font-size: 30px;
-  padding-top: 20px;
+  padding-top: 10px;
+  margin-top: 10px;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
   justify-self: center;
+  text-shadow: 2px 2px 4px #947676c4;
 }
 #timer-seconds {
   position: absolute;

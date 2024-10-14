@@ -146,9 +146,10 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let score = 6;
+let score = 10;
 let timerInterval;
 let timerTime = 20;
+let isRunning = false;
 audio.loop = true;
 
 soundButton.addEventListener("click", function () {
@@ -244,7 +245,6 @@ function selectAnswer(answerIndex) {
   }
 
   showDescription(questions[currentQuestionIndex].description);
-
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     setTimeout(() => {
@@ -252,9 +252,9 @@ function selectAnswer(answerIndex) {
       resetAnswerColors();
       showQuestion();
       resetTimer();
-    }, 8000);
+    }, 2000);
   } else {
-    setTimeout(endQuiz, 1000);
+    setTimeout(endQuiz, 3000);
   }
 }
 
@@ -267,7 +267,7 @@ function showFeedback(message, type) {
   document.body.appendChild(feedback);
   setTimeout(() => {
     feedback.remove();
-  }, 2000);
+  }, 4000);
 }
 
 function showDescription(description) {
