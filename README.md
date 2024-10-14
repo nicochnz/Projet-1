@@ -13,3 +13,4 @@ Faire la difficulté hard
 Faire un systeme de partage de points
 
 Corriger les bugs : Corriger le timer stop ; description de la dernière question
+Faire une page à propos
