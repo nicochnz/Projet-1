@@ -209,7 +209,7 @@ button .sound-class {
 }
 
 #recapContainer {
-  display: none; /* Assurez-vous qu'il soit caché par défaut */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -220,12 +220,13 @@ button .sound-class {
   padding: 20px;
   border-radius: 10px;
   width: 80%;
+  height: 80%;
 }
 
 #restartButton {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 1rem;
   border: none;
   background-color: #6c0433;
   color: rgb(255, 222, 222);
@@ -275,6 +276,33 @@ section img {
   width: 20%;
 }
 
+.imgRecap {
+  width: 90%;
+  height: 40%;
+  border-radius: 15px;
+  flex-direction: column;
+  display: flex;
+  margin: auto;
+  margin-bottom: 1rem;
+  box-shadow: 3px 3px 7px rgb(128 0 0 / 21%);
+}
+
+.h2RecapContainer {
+  text-shadow: 3px 3px 7px rgb(128 0 0 / 21%);
+}
+
+.classementContainer {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #6c0433;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  height: 70%;
+  display: none;
+}
+
 @media screen and (max-width: 500px) {
   #answerButtons {
     display: flex;
@@ -290,5 +318,16 @@ section img {
   .answer-button {
     height: auto;
     width: auto;
+  }
+  .imgRecap {
+    height: 55%;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .imgRecap {
+    height: 65%;
+    width: 50%;
   }
 }
