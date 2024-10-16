@@ -28,6 +28,7 @@ video {
   min-height: 100%;
   z-index: -1;
   object-fit: cover;
+  display: none;
 }
 
 #firstContainer img {
@@ -141,8 +142,6 @@ header {
 .question {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  height: auto;
-  width: auto;
 }
 .answer-button {
   padding: 10px;
@@ -161,8 +160,8 @@ header {
 #answerButtons {
   font-family: var(--textFont);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 20px;
 }
 .sound-class {
@@ -197,14 +196,23 @@ button .sound-class {
   0% {
     transform: scale(0);
     opacity: 0;
+    width: 50%;
+    text-align: center;
+    font-size: 1rem;
   }
   50% {
     transform: scale(1.5);
     opacity: 1;
+    width: 50%;
+    text-align: center;
+    font-size: 1rem;
   }
   100% {
     transform: scale(1);
     opacity: 0;
+    width: 50%;
+    text-align: center;
+    font-size: 1rem;
   }
 }
 
@@ -297,15 +305,11 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(0px, 40px);
   font-size: 30px;
   padding-top: 10px;
   margin-top: 10px;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
   justify-self: center;
+  align-self: center;
   text-shadow: 2px 2px 4px #947676c4;
 }
 
