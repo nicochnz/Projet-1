@@ -48,6 +48,7 @@ let score = 0;
 let timerInterval;
 let timerTime = 20;
 let isSoundOn = true;
+let isRunning = false;
 audio.loop = true;
 
 //*********************** bouton difficile ***********************
@@ -96,6 +97,7 @@ function startQuiz() {
     questionContainer.style.display = "flex";
     showQuestion();
     startTimer();
+    videoBordeaux.style.display = "block";
   }
 }
 
@@ -134,15 +136,16 @@ function selectAnswer(answerIndex) {
       const audioCorrect = new Audio("./music/niceJob.m4a");
       audioCorrect.play();
     }
+    pauseTimer();
   } else {
     showFeedback("Mauvaise réponse.", "error");
     selectedAnswerElement.style.backgroundColor = "red";
     correctAnswerElement.style.backgroundColor = "green";
-
     if (isSoundOn) {
       const audioIncorrect = new Audio("./music/notToday.m4a");
       audioIncorrect.play();
     }
+    pauseTimer();
   }
   //*********************** Descriptif en bas des questions  ***********************
   showDescription(currentQuestions[currentQuestionIndex].description);
@@ -218,14 +221,24 @@ function resetQuiz() {
 //*********************** Chronomètre ***********************
 function startTimer() {
   updateTimerDisplay();
-  timerInterval = setInterval(() => {
-    timerTime--;
-    updateTimerDisplay();
-    if (timerTime === 0) {
-      clearInterval(timerInterval);
-      selectAnswer(-1);
-    }
-  }, 1000);
+  if (!isRunning) {
+    isRunning = true;
+    timerInterval = setInterval(() => {
+      timerTime--;
+      updateTimerDisplay();
+      if (timerTime === 0) {
+        clearInterval(timerInterval);
+        selectAnswer(-1);
+      }
+    }, 1000);
+  }
+}
+
+function pauseTimer() {
+  if (isRunning) {
+    isRunning = false;
+    clearInterval(timerInterval);
+  }
 }
 
 function resetTimer() {
