@@ -51,7 +51,13 @@ audio.loop = true;
 
 //*********************** bouton difficile ***********************
 difficultyBtn.addEventListener("click", function () {
-  var difficultyVisible = easyBtn.style.display === "inline";
+  startButton.style.display = "none";
+  difficultyBtn.style.display = "none";
+  startButton.style.display = "inline";
+});
+
+difficultyBtn.addEventListener("click", function () {
+  const difficultyVisible = easyBtn.style.display === "inline";
 
   if (difficultyVisible) {
     easyBtn.style.display = "none";
@@ -64,14 +70,16 @@ difficultyBtn.addEventListener("click", function () {
 
 easyBtn.addEventListener("click", function () {
   currentQuestions = questions;
-  easyBtn.style.display = "none";
+  easyBtn.style.display = "inline";
   hardBtn.style.display = "none";
+  difficultyBtn.style.display = "inline";
 });
 
 hardBtn.addEventListener("click", function () {
   currentQuestions = questions2;
   easyBtn.style.display = "none";
-  hardBtn.style.display = "none";
+  hardBtn.style.display = "inline";
+  difficultyBtn.style.display = "inline";
 });
 
 //*********************** Son ON /OFF ***********************
