@@ -1,5 +1,4 @@
 * {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -226,6 +225,8 @@ button .sound-class {
 .feedback-message {
   position: fixed;
   top: 50%;
+  width: 200px;
+  height: auto;
   right: 10%;
   transform: translate(-50%, -50%);
   font-size: 5em;
@@ -259,6 +260,9 @@ button .sound-class {
   border-radius: 10px;
   width: 80%;
   height: 80%;
+}
+video {
+  position: fixed;
 }
 
 #restartButton {
@@ -360,7 +364,7 @@ section img {
   display: none;
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
   #answerButtons {
     display: flex;
     flex-direction: column;
@@ -387,4 +391,4 @@ section img {
     height: 65%;
     width: 50%;
   }
-}
+} */
