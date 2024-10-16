@@ -78,6 +78,7 @@ hardBtn.addEventListener("click", function () {
 soundButton.addEventListener("click", function () {
   if (audio.paused) {
     audio.play();
+    audio.volume = 0.3;
     isSoundOn = true;
     imgAudio.src = "image/sound-on.png";
   } else {
@@ -93,7 +94,6 @@ function startQuiz() {
   } else {
     firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
-    createBackgroundVideo("video/Bordeaux-v.mov");
     showQuestion();
     startTimer();
   }
@@ -112,8 +112,6 @@ function showQuestion() {
     button.textContent = currentQuestion.answers[index];
     button.dataset.index = index;
     button.onclick = () => selectAnswer(index);
-
-    video.style.display = "block";
   });
 }
 //*********************** Choix de la réponse  ***********************
@@ -135,6 +133,7 @@ function selectAnswer(answerIndex) {
     if (isSoundOn) {
       const audioCorrect = new Audio("./music/niceJob.m4a");
       audioCorrect.play();
+      audioCorrect.volume = 1.0;
     }
   } else {
     showFeedback("Mauvaise réponse.", "error");
@@ -144,6 +143,7 @@ function selectAnswer(answerIndex) {
     if (isSoundOn) {
       const audioIncorrect = new Audio("./music/notToday.m4a");
       audioIncorrect.play();
+      audioinCorrect.volume = 1.0;
     }
   }
   //*********************** Descriptif en bas des questions  ***********************
@@ -190,7 +190,6 @@ function endQuiz() {
   questionContainer.style.display = "none";
   recapContainer.style.display = "block";
   descriptionQuestion.style.display = "none";
-  video.style.display = "none";
   finalScoreText.textContent = score;
   clearInterval(timerInterval);
 }
