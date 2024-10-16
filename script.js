@@ -80,6 +80,7 @@ hardBtn.addEventListener("click", function () {
 soundButton.addEventListener("click", function () {
   if (audio.paused) {
     audio.play();
+    audio.volume = 0.3;
     isSoundOn = true;
     imgAudio.src = "image/sound-on.png";
   } else {
@@ -135,6 +136,7 @@ function selectAnswer(answerIndex) {
     if (isSoundOn) {
       const audioCorrect = new Audio("./music/niceJob.m4a");
       audioCorrect.play();
+      audioCorrect.volume = 1.0;
     }
     pauseTimer();
   } else {
@@ -144,6 +146,7 @@ function selectAnswer(answerIndex) {
     if (isSoundOn) {
       const audioIncorrect = new Audio("./music/notToday.m4a");
       audioIncorrect.play();
+      audioinCorrect.volume = 1.0;
     }
     pauseTimer();
   }
