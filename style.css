@@ -1,5 +1,4 @@
 * {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -22,6 +21,28 @@ body {
   background-repeat: no-repeat;
   text-align: center;
 }
+
+/**  
+
+
+
+**/
+video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  
+}
+
+
+
+
+
+
+
+
 
 #firstContainer img {
   width: 200px;
@@ -204,6 +225,8 @@ button .sound-class {
 .feedback-message {
   position: fixed;
   top: 50%;
+  width: 200px;
+  height: auto;
   right: 10%;
   transform: translate(-50%, -50%);
   font-size: 5em;
@@ -238,6 +261,9 @@ button .sound-class {
   width: 80%;
   height: 80%;
 }
+video {
+  position: fixed;
+}
 
 #restartButton {
   margin-top: 20px;
@@ -265,6 +291,19 @@ button .sound-class {
   margin-top: 2rem;
 }
 
+
+.answer-button #timer{
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+
+
+/**
 #timer {
   position: absolute;
   background-image: url("image/chrono2.png");
@@ -286,6 +325,9 @@ button .sound-class {
   justify-self: center;
   text-shadow: 2px 2px 4px #947676c4;
 }
+**/
+
+
 #timer-seconds {
   position: absolute;
   top: 60%;
@@ -322,7 +364,7 @@ section img {
   display: none;
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
   #answerButtons {
     display: flex;
     flex-direction: column;
@@ -349,4 +391,4 @@ section img {
     height: 65%;
     width: 50%;
   }
-}
+} */
