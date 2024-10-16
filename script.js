@@ -24,6 +24,7 @@ const classementContainer = document.createElement("section");
 const difficultyBtn = document.getElementById("difficulty");
 const easyBtn = document.getElementById("easy");
 const hardBtn = document.getElementById("hard");
+const videoBordeaux = document.querySelector("#videoBordeaux");
 classementContainer.className = "classementContainer";
 document.body.appendChild(classementContainer);
 recapContainer.appendChild(classementBtn);
@@ -93,7 +94,7 @@ function startQuiz() {
   } else {
     firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
-    createBackgroundVideo("video/Bordeaux-v.mov");
+    videoBordeaux.style.display = "block";
     showQuestion();
     startTimer();
   }
@@ -112,8 +113,6 @@ function showQuestion() {
     button.textContent = currentQuestion.answers[index];
     button.dataset.index = index;
     button.onclick = () => selectAnswer(index);
-
-    video.style.display = "block";
   });
 }
 //*********************** Choix de la réponse  ***********************
@@ -190,7 +189,6 @@ function endQuiz() {
   questionContainer.style.display = "none";
   recapContainer.style.display = "block";
   descriptionQuestion.style.display = "none";
-  video.style.display = "none";
   finalScoreText.textContent = score;
   clearInterval(timerInterval);
 }

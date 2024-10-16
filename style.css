@@ -33,16 +33,7 @@ video {
   min-height: 100%;
   z-index: -1;
   object-fit: cover;
-  
 }
-
-
-
-
-
-
-
-
 
 #firstContainer img {
   width: 200px;
@@ -291,8 +282,7 @@ video {
   margin-top: 2rem;
 }
 
-
-.answer-button #timer{
+.answer-button #timer {
   display: grid;
   grid-column-start: 2;
   grid-column-end: 3;
@@ -300,10 +290,6 @@ video {
   grid-row-end: 3;
 }
 
-
-
-
-/**
 #timer {
   position: absolute;
   background-image: url("image/chrono2.png");
@@ -325,8 +311,6 @@ video {
   justify-self: center;
   text-shadow: 2px 2px 4px #947676c4;
 }
-**/
-
 
 #timer-seconds {
   position: absolute;
@@ -364,7 +348,7 @@ section img {
   display: none;
 }
 
-/* @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   #answerButtons {
     display: flex;
     flex-direction: column;
@@ -378,11 +362,10 @@ section img {
   }
   .answer-button {
     height: auto;
-    width: auto;
   }
   .imgRecap {
     height: 55%;
-    width: 80%;
+    width: 50%;
   }
 }
 
@@ -391,4 +374,4 @@ section img {
     height: 65%;
     width: 50%;
   }
-} */
+}
