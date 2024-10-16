@@ -93,8 +93,7 @@ function startQuiz() {
   } else {
     firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
-    createBackgroundVideo("video/Bordeaux-v.mov");
-    showQuestion();
+        showQuestion();
     startTimer();
   }
 }
@@ -113,8 +112,7 @@ function showQuestion() {
     button.dataset.index = index;
     button.onclick = () => selectAnswer(index);
 
-    video.style.display = "block";
-  });
+    });
 }
 //*********************** Choix de la réponse  ***********************
 function selectAnswer(answerIndex) {
@@ -190,8 +188,7 @@ function endQuiz() {
   questionContainer.style.display = "none";
   recapContainer.style.display = "block";
   descriptionQuestion.style.display = "none";
-  video.style.display = "none";
-  finalScoreText.textContent = score;
+   finalScoreText.textContent = score;
   clearInterval(timerInterval);
 }
 
