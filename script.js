@@ -98,7 +98,9 @@ function startQuiz() {
     startTimer();
   }
 }
+
 //*********************** Moment où les questions arrivent  ***********************
+
 function showQuestion() {
   const currentQuestion = currentQuestions[currentQuestionIndex];
   questionText.textContent = currentQuestion.question;
