@@ -1,0 +1,11 @@
+{
+  "name": "projet1",
+  "version": "1.0.0",
+  "description": "Listes des tâches :\r Modifier certains texte des descriptions parfois trop long",
+  "main": "question.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "author": "",
+  "license": "ISC"
+}
