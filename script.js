@@ -17,7 +17,6 @@ let numberQuestion = document.getElementById("numberQuestion");
 const audio = document.getElementById("myAudio");
 const soundButton = document.getElementById("sound-id");
 const imgAudio = document.querySelector(".img-sound");
-const video = document.createElement("video");
 const imgRecap = document.createElement("img");
 const classementBtn = document.createElement("button");
 const classementContainer = document.createElement("section");
@@ -174,24 +173,6 @@ function startQuiz() {
     showQuestion();
     startTimer();
   }
-}
-
-function createBackgroundVideo(videoSrc) {
-  video.src = "video/Bordeaux-v.mov";
-  video.autoplay = true;
-  video.muted = true;
-  video.loop = true;
-  video.style.position = "fixed";
-  video.style.top = "50%";
-  video.style.left = "50%";
-  video.style.minWidth = "100%";
-  video.style.minHeight = "100%";
-  video.style.width = "auto";
-  video.style.height = "auto";
-  video.style.zIndex = "-1";
-  video.style.transform = "translate(-50%, -50%)";
-  video.style.objectFit = "cover";
-  document.body.appendChild(video);
 }
 
 function showQuestion() {

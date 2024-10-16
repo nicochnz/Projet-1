@@ -23,6 +23,28 @@ body {
   text-align: center;
 }
 
+/**  
+
+
+
+**/
+video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  
+}
+
+
+
+
+
+
+
+
+
 #firstContainer img {
   width: 200px;
   height: 250px;
@@ -265,6 +287,19 @@ button .sound-class {
   margin-top: 2rem;
 }
 
+
+.answer-button #timer{
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
+
+
+/**
 #timer {
   position: absolute;
   background-image: url("image/chrono2.png");
@@ -286,6 +321,9 @@ button .sound-class {
   justify-self: center;
   text-shadow: 2px 2px 4px #947676c4;
 }
+**/
+
+
 #timer-seconds {
   position: absolute;
   top: 60%;
