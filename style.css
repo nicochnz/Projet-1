@@ -244,7 +244,7 @@ button .sound-class {
   font-weight: bold;
   padding-top: 20px;
   border-radius: 10px;
-  width: 80%;
+  width: auto;
   height: 80%;
 }
 video {
@@ -277,6 +277,16 @@ video {
   margin-top: 2rem;
 }
 
+
+.answer-button #timer {
+  display: grid;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+
 #timer {
   position: absolute;
   background-image: url("image/chrono2.png");
@@ -298,7 +308,11 @@ video {
   justify-self: center;
   text-shadow: 2px 2px 4px #947676c4;
 }
-**/ #timer-seconds {
+
+
+
+ #timer-seconds {
+
   position: absolute;
   top: 60%;
   left: 50%;
@@ -333,12 +347,75 @@ section img {
   height: 70%;
   display: none;
 }
+h1 {
+  font-size: 50px;
+  margin: 9rem;
+  margin-top: 4rem;
+  color: rgba(255, 247, 247, 0.9);
+}
+.photos-groupe p audio {
+  text-align: center;
+  border: solid 2px #6c0433;
+  border-radius: 20px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.342);
+}
+.photos-groupe p {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(158, 158, 158, 0.575);
+  border-radius: 20px;
+}
+.photos-groupe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+  height: auto;
+  justify-content: center;
+  gap: 70px;
+}
+.nico {
+  padding-top: 23px;
+}
+.math {
+  padding-top: 37px;
+}
+.aurel {
+  padding-top: 10px;
+}
+
+
+.photos-groupe img {
+  width: 50%;
+  height: auto;
+  max-width: 200px;
+  margin: 0 auto;
+}
+a {
+  font-size: 50px;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.5;
+}
+.imgRecap {
+  height: 30%;
+  width: 30%;
+}
 
 @media screen and (max-width: 500px) {
   #answerButtons {
     display: flex;
     flex-direction: column;
   }
+
+  .photos-groupe article {
+    width: 100%;
+  }
+}
+
 
   #timer {
     position: absolute;
@@ -370,7 +447,14 @@ section img {
   .answer-button {
     height: auto;
   }
+  .photos-groupe article {
+    width: 100%;
+  }
   .imgRecap {
+
+    height: 30%;
+    width: 30%;
+
     height: 55%;
     width: 50%;
   }
@@ -378,7 +462,7 @@ section img {
 
 @media screen and (min-width: 1000px) {
   .imgRecap {
-    height: 65%;
-    width: 50%;
+    height: 30%;
+    width: 30%;
   }
 }
