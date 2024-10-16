@@ -152,12 +152,12 @@ function selectAnswer(answerIndex) {
     showFeedback("Mauvaise réponse.", "error");
     selectedAnswerElement.style.backgroundColor = "red";
     correctAnswerElement.style.backgroundColor = "green";
+    pauseTimer();
     if (isSoundOn) {
       const audioIncorrect = new Audio("./music/notToday.m4a");
       audioIncorrect.play();
       audioinCorrect.volume = 1.0;
     }
-    pauseTimer();
   }
   //*********************** Descriptif en bas des questions  ***********************
   showDescription(currentQuestions[currentQuestionIndex].description);
