@@ -94,7 +94,6 @@ function startQuiz() {
   } else {
     firstContainer.style.display = "none";
     questionContainer.style.display = "flex";
-    videoBordeaux.style.display = "block";
     showQuestion();
     startTimer();
   }
