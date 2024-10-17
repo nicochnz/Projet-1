@@ -7,56 +7,56 @@ export const questions = [
       "Paris devient définitivement la capitale en 1792, malgré, des défaites militaires contraignant des gouvernements à s'exiler hors de Paris, sans enlever à la ville son statut",
     correct: 0,
   },
-  // {
-  //   question: "Que représentent les mascarons ?",
-  //   answers: [
-  //     " Ornement d’inspiration multiple se trouvant principalement en haut des façades",
-  //     "C'est un petit gâteau",
-  //     "Un masque porté lors des festivals bordelais",
-  //     "Un accessoire de mode du XVIIe siècle",
-  //   ],
-  //   description:
-  //     "Bordeaux présente plus de 3 000 mascarons qui participent à l'ornementation des façades et des fontaines de la ville. ",
-  //   correct: 0,
-  // },
-  // {
-  //   question:
-  //     "Qu’était le stade Chaban-Delmas avant d’être dédié au foot et au rugby ?",
-  //   answers: [
-  //     "Un pré où broutaient des chèvres",
-  //     "Un vélodrome",
-  //     "Un amphithéâtre romain",
-  //     " Un parking pour carrosses",
-  //   ],
-  //   description:
-  //     "Né en 1924, avant le stade Chaban, le premier parc des sports Lescure fut imaginé par un certain Robert Hüe, pour accueillir un grand vélodrome. ",
-  //   correct: 1,
-  // },
-  // {
-  //   question: "Quand est apparu le premier tramway à Bordeaux ?",
-  //   answers: ["1932", "2003", "2000", "1880"],
-  //   description:
-  //     "Lors de sa mise en circulation le 4 mai 1880, la première ligne bordelaise présentait des tramways tractés par des chevaux.",
-  //   correct: 3,
-  // },
-  // {
-  //   question: "Qu’est donc le Palais Rohan ?",
-  //   answers: [
-  //     "Un château dans Le Seigneur des Anneaux",
-  //     "L’actuelle mairie de Bordeaux.",
-  //     "Les bâtiments composant la Place de la Bourse.",
-  //     "Une échoppe célèbre pour ses huîtres.",
-  //   ],
-  //   description:
-  //     "Palais impérial de Napoléon Ier en 1808 et palais royal en 1815 sous Louis XVIII, le palais Rohan devient hôtel de ville en 1835. ",
-  //   correct: 1,
-  // },
-  // {
-  //   question: "Combien de lignes possède le Tramway de la ville de Bordeaux ?",
-  //   answers: ["2", "4", "6", "8"],
-  //   description: "Les lignes portent les noms A, B, C et D",
-  //   correct: 1,
-  // },
+  {
+    question: "Que représentent les mascarons ?",
+    answers: [
+      " Ornement d’inspiration multiple se trouvant principalement en haut des façades",
+      "C'est un petit gâteau",
+      "Un masque porté lors des festivals bordelais",
+      "Un accessoire de mode du XVIIe siècle",
+    ],
+    description:
+      "Bordeaux présente plus de 3 000 mascarons qui participent à l'ornementation des façades et des fontaines de la ville. ",
+    correct: 0,
+  },
+  {
+    question:
+      "Qu’était le stade Chaban-Delmas avant d’être dédié au foot et au rugby ?",
+    answers: [
+      "Un pré où broutaient des chèvres",
+      "Un vélodrome",
+      "Un amphithéâtre romain",
+      " Un parking pour carrosses",
+    ],
+    description:
+      "Né en 1924, avant le stade Chaban, le premier parc des sports Lescure fut imaginé par un certain Robert Hüe, pour accueillir un grand vélodrome. ",
+    correct: 1,
+  },
+  {
+    question: "Quand est apparu le premier tramway à Bordeaux ?",
+    answers: ["1932", "2003", "2000", "1880"],
+    description:
+      "Lors de sa mise en circulation le 4 mai 1880, la première ligne bordelaise présentait des tramways tractés par des chevaux.",
+    correct: 3,
+  },
+  {
+    question: "Qu’est donc le Palais Rohan ?",
+    answers: [
+      "Un château dans Le Seigneur des Anneaux",
+      "L’actuelle mairie de Bordeaux.",
+      "Les bâtiments composant la Place de la Bourse.",
+      "Une échoppe célèbre pour ses huîtres.",
+    ],
+    description:
+      "Palais impérial de Napoléon Ier en 1808 et palais royal en 1815 sous Louis XVIII, le palais Rohan devient hôtel de ville en 1835. ",
+    correct: 1,
+  },
+  {
+    question: "Combien de lignes possède le Tramway de la ville de Bordeaux ?",
+    answers: ["2", "4", "6", "8"],
+    description: "Les lignes portent les noms A, B, C et D",
+    correct: 1,
+  },
   {
     question: "Lequel de ces quartiers n’est pas situé à Bordeaux ?",
     answers: [
