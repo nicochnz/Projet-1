@@ -22,6 +22,14 @@ body {
   text-align: center;
 }
 
+a.accueil {
+  font-size: 20px;
+}
+
+#about {
+  margin-top: 1rem;
+}
+
 video {
   position: fixed;
   min-width: 100%;
@@ -29,6 +37,8 @@ video {
   z-index: -1;
   object-fit: cover;
   display: none;
+  position: fixed;
+  height: 130%;
 }
 
 #firstContainer img {
@@ -109,6 +119,8 @@ button:nth-child(4) {
   background-color: rgba(255, 255, 255, 0.571);
   padding: 20px;
   box-shadow: 2px 1px 15px 8px #7b6f6f21;
+  height: 110%;
+
   border-radius: 10px;
   max-height: 80%;
   width: 80%;
@@ -129,6 +141,7 @@ header {
   color: black;
   border: solid 2px #6c0433;
   width: auto;
+  padding: 15px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: 2px 2px 2px #6c0433;
@@ -151,6 +164,8 @@ header {
   justify-content: center;
   align-items: center;
   min-width: 150px;
+  margin-top: 1rem;
+  overflow-wrap: break-word;
   height: auto;
   max-height: 500px;
   width: auto;
@@ -161,6 +176,7 @@ header {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 20px;
+  height: 60%;
 }
 .sound-class {
   background: none;
@@ -252,11 +268,6 @@ button .sound-class {
   border-radius: 10px;
   width: auto;
   height: 80%;
-}
-video {
-  position: fixed;
-  width: 110%;
-  height: 110%;
 }
 
 #restartButton {
@@ -403,6 +414,37 @@ a:hover {
   width: 30%;
 }
 
+@media screen and (max-width: 500px) {
+  #answerButtons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photos-groupe article {
+    width: 100%;
+  }
+}
+
+#timer {
+  position: absolute;
+  background-image: url("image/chrono2.png");
+  background-size: cover;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  font-size: 30px;
+  padding-top: 10px;
+  margin-top: 10px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  transform: translateY(-100px);
+  justify-self: center;
+  text-shadow: 2px 2px 4px #947676c4;
+}
+
 @media screen and (min-width: 500px) {
   #firstContainer img {
     width: 280px;
@@ -421,11 +463,20 @@ a:hover {
     height: 55%;
     width: 50%;
   }
+  #timer {
+    transform: translateY(0px);
+  }
+  .question-container {
+    height: 80%;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .imgRecap {
     height: 30%;
     width: 30%;
+  }
+  .question-container {
+    margin-right: 100px;
   }
 }

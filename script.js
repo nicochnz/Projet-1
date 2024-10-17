@@ -153,10 +153,11 @@ function selectAnswer(answerIndex) {
     selectedAnswerElement.style.backgroundColor = "red";
     correctAnswerElement.style.backgroundColor = "green";
     pauseTimer();
+    showDescription(currentQuestions[currentQuestionIndex].description);
     if (isSoundOn) {
       const audioIncorrect = new Audio("./music/notToday.m4a");
       audioIncorrect.play();
-      audioinCorrect.volume = 1.0;
+      audioIncorrect.volume = 1.0;
     }
   }
   //*********************** Descriptif en bas des questions  ***********************
