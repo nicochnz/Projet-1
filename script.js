@@ -1,30 +1,30 @@
 import { questions, questions2 } from "./question.js";
-const firstContainer = document.getElementById("firstContainer");
-const startButton = document.getElementById("startButton");
-const questionContainer = document.getElementById("questionContainer");
-const questionText = document.getElementById("questionText");
-const answerButtons = document.getElementById("answerButtons");
-const recapContainer = document.getElementById("recapContainer");
-const finalScoreText = document.getElementById("finalScore");
-const restartButton = document.getElementById("restartButton");
-const scoreDisplay = document.getElementById("score");
-const timerSpan = document.getElementById("timer");
-const allButton = document.querySelectorAll("button");
-const descriptionQuestion = document.getElementById("description");
-const h2RecapContainer = document.createElement("h2");
-const body = document.querySelector("body");
-const input = document.createElement("input");
-const numberQuestion = document.getElementById("numberQuestion");
-const audio = document.getElementById("myAudio");
-const soundButton = document.getElementById("sound-id");
-const imgAudio = document.querySelector(".img-sound");
-const imgRecap = document.createElement("img");
-const classementBtn = document.createElement("button");
-const classementContainer = document.createElement("section");
-const difficultyBtn = document.getElementById("difficulty");
-const easyBtn = document.getElementById("easy");
-const hardBtn = document.getElementById("hard");
-const videoBordeaux = document.querySelector("#videoBordeaux");
+import {
+  firstContainer,
+  questionContainer,
+  startButton,
+  questionText,
+  answerButtons,
+  recapContainer,
+  finalScoreText,
+  restartButton,
+  scoreDisplay,
+  timerSpan,
+  descriptionQuestion,
+  h2RecapContainer,
+  input,
+  numberQuestion,
+  audio,
+  soundButton,
+  imgAudio,
+  imgRecap,
+  classementBtn,
+  classementContainer,
+  difficultyBtn,
+  easyBtn,
+  hardBtn,
+  videoBordeaux,
+} from "./variables.js";
 classementContainer.className = "classementContainer";
 document.body.appendChild(classementContainer);
 recapContainer.appendChild(classementBtn);
@@ -69,7 +69,7 @@ difficultyBtn.addEventListener("click", function () {
     hardBtn.style.display = "inline";
   }
 });
-
+//*********************** bouton difficile / facile***********************
 easyBtn.addEventListener("click", function () {
   currentQuestions = questions;
   easyBtn.style.display = "inline";
