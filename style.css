@@ -109,9 +109,8 @@ button:nth-child(4) {
   background-color: rgba(255, 255, 255, 0.571);
   padding: 20px;
   box-shadow: 2px 1px 15px 8px #7b6f6f21;
-
   border-radius: 10px;
-  /* Ajout d'une hauteur pour garantir l'affichage correct */
+  max-height: 80%;
   width: 80%;
   font-family: var(--textFont);
   margin-top: 3rem;
@@ -129,23 +128,21 @@ header {
   font-size: 1rem;
   color: black;
   border: solid 2px #6c0433;
-  width: 90%;
-  height: 40%;
-  height: auto;
+  width: auto;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: 2px 2px 2px #6c0433;
   overflow-wrap: break-word;
+  padding: 15px;
   margin-top: 30px;
   transform: translateY(-20px);
 }
 .question {
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  max-height: 80%;
 }
 .answer-button {
-  padding: 10px;
-  box-sizing: border-box;
   text-align: center;
   background-color: #6c0433;
   color: rgb(255, 222, 222);
@@ -154,8 +151,9 @@ header {
   justify-content: center;
   align-items: center;
   min-width: 150px;
-  margin-top: 1rem;
   height: auto;
+  max-height: 500px;
+  width: auto;
 }
 #answerButtons {
   font-family: var(--textFont);
@@ -257,6 +255,8 @@ button .sound-class {
 }
 video {
   position: fixed;
+  width: 110%;
+  height: 110%;
 }
 
 #restartButton {
@@ -401,36 +401,6 @@ a:hover {
 .imgRecap {
   height: 30%;
   width: 30%;
-}
-
-@media screen and (max-width: 500px) {
-  #answerButtons {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .photos-groupe article {
-    width: 100%;
-  }
-}
-
-#timer {
-  position: absolute;
-  background-image: url("image/chrono2.png");
-  background-size: cover;
-  background-position: center;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  font-size: 30px;
-  padding-top: 10px;
-  margin-top: 10px;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  justify-self: center;
-  text-shadow: 2px 2px 4px #947676c4;
 }
 
 @media screen and (min-width: 500px) {
